@@ -1,0 +1,37 @@
+{
+  "name": "dapp-multipage-template",
+  "version": "1.0.0",
+  "description": ">A template for Ethereum-based  DApp.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankeshpatel/DApp-MultiPage-Template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pankeshpatel/DApp-MultiPage-Template/issues"
+  },
+  "homepage": "https://github.com/pankeshpatel/DApp-MultiPage-Template#readme",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "ganache-cli": "^6.5.0",
+    "mocha": "^6.1.4",
+    "next": "^4.2.3",
+    "next-routes": "^1.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.3",
+    "solc": "^0.4.17",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.0.0-beta.35"
+  }
+}

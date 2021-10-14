@@ -1,0 +1,41 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _web = require('web3');
+
+var _web2 = _interopRequireDefault(_web);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var web3 = void 0; // This file configures web3 with a provider from metamask.
+
+// If metamask does not inject a provider, then use "HttpProvider"
+
+if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
+
+  // Use the provider provided by the metamask, running into web browser.
+
+
+  // Here the assumption is that metamask is installed in our browser
+  // and metamask has already injected "provider" into our browser.
+
+  // What if the metamask has not injected " provider"?????????
+
+  // We are in the browser and metamask is running.
+  web3 = new _web2.default(window.web3.currentProvider);
+} else {
+
+  // If the metamask plugin is not installed into user's chrome browser,
+  // then we try to access his account through infura.
+
+  // We are on the server *OR* the user is not running metamask
+  var provider = new _web2.default.providers.HttpProvider('https://rinkeby.infura.io/orDImgKRzwNrVCDrAk5Q');
+  web3 = new _web2.default(provider);
+}
+
+exports.default = web3;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVua25vd24iXSwibmFtZXMiOlsid2ViMyIsIndpbmRvdyIsImN1cnJlbnRQcm92aWRlciIsInByb3ZpZGVyIiwicHJvdmlkZXJzIiwiSHR0cFByb3ZpZGVyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFJQTs7Ozs7O0FBRUEsSUFBSUEsT0FBTyxLQUFLLENBQWhCLEMsQ0FOQTs7QUFFQTs7QUFNQSxJQUFJLE9BQU9DLE1BQVAsS0FBa0IsV0FBbEIsSUFBaUMsT0FBT0EsT0FBT0QsSUFBZCxLQUF1QixXQUE1RCxFQUF5RTs7QUFFdkU7OztBQUdBO0FBQ0E7O0FBRUE7O0FBRUE7QUFDQUEsU0FBTyxrQkFBU0MsT0FBT0QsSUFBUCxDQUFZRSxlQUFyQixDQUFQO0FBQ0QsQ0FaRCxNQVlPOztBQUVMO0FBQ0E7O0FBRUE7QUFDQSxNQUFJQyxXQUFXLElBQUksY0FBS0MsU0FBTCxDQUFlQyxZQUFuQixDQUFnQyxnREFBaEMsQ0FBZjtBQUNBTCxTQUFPLGtCQUFTRyxRQUFULENBQVA7QUFDRDs7a0JBRWNILEkiLCJmaWxlIjoidW5rbm93biIsInNvdXJjZXNDb250ZW50IjpbIi8vIFRoaXMgZmlsZSBjb25maWd1cmVzIHdlYjMgd2l0aCBhIHByb3ZpZGVyIGZyb20gbWV0YW1hc2suXG5cbi8vIElmIG1ldGFtYXNrIGRvZXMgbm90IGluamVjdCBhIHByb3ZpZGVyLCB0aGVuIHVzZSBcIkh0dHBQcm92aWRlclwiXG5cbmltcG9ydCBXZWIzIGZyb20gJ3dlYjMnO1xuXG52YXIgd2ViMyA9IHZvaWQgMDtcblxuaWYgKHR5cGVvZiB3aW5kb3cgIT09ICd1bmRlZmluZWQnICYmIHR5cGVvZiB3aW5kb3cud2ViMyAhPT0gJ3VuZGVmaW5lZCcpIHtcblxuICAvLyBVc2UgdGhlIHByb3ZpZGVyIHByb3ZpZGVkIGJ5IHRoZSBtZXRhbWFzaywgcnVubmluZyBpbnRvIHdlYiBicm93c2VyLlxuXG5cbiAgLy8gSGVyZSB0aGUgYXNzdW1wdGlvbiBpcyB0aGF0IG1ldGFtYXNrIGlzIGluc3RhbGxlZCBpbiBvdXIgYnJvd3NlclxuICAvLyBhbmQgbWV0YW1hc2sgaGFzIGFscmVhZHkgaW5qZWN0ZWQgXCJwcm92aWRlclwiIGludG8gb3VyIGJyb3dzZXIuXG5cbiAgLy8gV2hhdCBpZiB0aGUgbWV0YW1hc2sgaGFzIG5vdCBpbmplY3RlZCBcIiBwcm92aWRlclwiPz8/Pz8/Pz8/XG5cbiAgLy8gV2UgYXJlIGluIHRoZSBicm93c2VyIGFuZCBtZXRhbWFzayBpcyBydW5uaW5nLlxuICB3ZWIzID0gbmV3IFdlYjMod2luZG93LndlYjMuY3VycmVudFByb3ZpZGVyKTtcbn0gZWxzZSB7XG5cbiAgLy8gSWYgdGhlIG1ldGFtYXNrIHBsdWdpbiBpcyBub3QgaW5zdGFsbGVkIGludG8gdXNlcidzIGNocm9tZSBicm93c2VyLFxuICAvLyB0aGVuIHdlIHRyeSB0byBhY2Nlc3MgaGlzIGFjY291bnQgdGhyb3VnaCBpbmZ1cmEuXG5cbiAgLy8gV2UgYXJlIG9uIHRoZSBzZXJ2ZXIgKk9SKiB0aGUgdXNlciBpcyBub3QgcnVubmluZyBtZXRhbWFza1xuICB2YXIgcHJvdmlkZXIgPSBuZXcgV2ViMy5wcm92aWRlcnMuSHR0cFByb3ZpZGVyKCdodHRwczovL3JpbmtlYnkuaW5mdXJhLmlvL29yREltZ0tSendOclZDRHJBazVRJyk7XG4gIHdlYjMgPSBuZXcgV2ViMyhwcm92aWRlcik7XG59XG5cbmV4cG9ydCBkZWZhdWx0IHdlYjM7Il19
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVua25vd24iXSwibmFtZXMiOlsid2ViMyIsIndpbmRvdyIsImN1cnJlbnRQcm92aWRlciIsInByb3ZpZGVyIiwicHJvdmlkZXJzIiwiSHR0cFByb3ZpZGVyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFJQTs7Ozs7O0FBRUEsSUFBSUEsT0FBTyxLQUFLLENBQWhCLEMsQ0FOQTs7QUFFQTs7QUFNQSxJQUFJLE9BQU9DLE1BQVAsS0FBa0IsV0FBbEIsSUFBaUMsT0FBT0EsT0FBT0QsSUFBZCxLQUF1QixXQUE1RCxFQUF5RTs7QUFFdkU7OztBQUdBO0FBQ0E7O0FBRUE7O0FBRUE7QUFDQUEsU0FBTyxrQkFBU0MsT0FBT0QsSUFBUCxDQUFZRSxlQUFyQixDQUFQO0FBQ0QsQ0FaRCxNQVlPOztBQUVMO0FBQ0E7O0FBRUE7QUFDQSxNQUFJQyxXQUFXLElBQUksY0FBS0MsU0FBTCxDQUFlQyxZQUFuQixDQUFnQyxnREFBaEMsQ0FBZjtBQUNBTCxTQUFPLGtCQUFTRyxRQUFULENBQVA7QUFDRDs7a0JBRWNILEkiLCJmaWxlIjoidW5rbm93biJ9
